@@ -44,6 +44,8 @@ fabric.properties
 *.iml
 out
 gen
-/phinajs/
-/src/
-/image/
+/phinajs
+/src
+/image
+/xcf
+/experimental
