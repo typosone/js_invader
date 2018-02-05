@@ -150,6 +150,8 @@ phina.define('EnemyGroup', {
                     x: ix * option.offsetX,
                     y: (option.lengthY - iy - 1) * option.offsetY
                 }).addChildTo(thisGroup);
+                const animation = FrameAnimation('enemy').attachTo(enemy);
+                animation.gotoAndPlay('move');
             });
         });
     },
@@ -180,7 +182,24 @@ phina.define('EnemyGroup', {
 const ASSETS = {
     image: {
         player: './image/player.png',
-        enemy1: './image/enemy1-1.png'
+        enemy1: './image/enemy1.png'
+    },
+    spritesheet: {
+        'enemy': {
+            'frame': {
+                'width': 59,
+                'height': 59,
+                'cols': 2,
+                'rows': 1
+            },
+            'animations': {
+                'move': {
+                    'frames': [0, 1],
+                    'next': 'move',
+                    'frequency': 60
+                }
+            }
+        }
     }
 };
 
